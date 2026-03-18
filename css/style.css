@@ -215,23 +215,32 @@ body {
     color: white;
     display: flex;
     justify-content: center;
-    overflow-x: auto;
+    grid-column: span 3;
+    overflow: hidden;
 }
 
 .formula-display {
     padding: 20px 10px;
     text-align: center;
-    overflow-x: auto;
-    max-width: 100%;
+    width: 100%;
 }
 
 .math-eq {
-    font-size: 1.6rem;
+    font-size: 1.2rem;
     font-weight: 400;
     font-family: monospace, SFMono-Regular;
-    letter-spacing: 1px;
-    display: inline-block;
-    max-width: 100%;
+    letter-spacing: 0.5px;
+    display: block;
+    word-break: break-word;
+}
+
+/* Forzar a MathJax a adaptarse al ancho disponible */
+.MathJax {
+    font-size: 1em !important;
+}
+mjx-container {
+    max-width: 100% !important;
+    overflow: hidden !important;
 }
 
 .formula-desc {
@@ -245,6 +254,7 @@ body {
     background: linear-gradient(135deg, #1C1C1E 0%, #2C2C2E 100%);
     box-shadow: 0 8px 32px rgba(0,0,0,0.1);
     border: 1px solid rgba(255,255,255,0.1);
+    grid-column: span 3;
 }
 
 .card-formula-main .math-eq {
