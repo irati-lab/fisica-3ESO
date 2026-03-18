@@ -1,0 +1,657 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Física 3º ESO - Cinemática</title>
+    <link rel="stylesheet" href="css/style.css">
+    <!-- Usamos la tipografía Inter para emular el estilo Apple (San Francisco) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <!-- MathJax para renderizar fórmulas matemáticas escritas en LaTeX ($...$) -->
+    <script>
+      MathJax = {
+        tex: {
+          inlineMath: [['$', '$'], ['\\(', '\\)']]
+        }
+      };
+    </script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+</head>
+<body>
+
+    <div class="app-container">
+        
+        <!-- BARRA LATERAL (Sidebar) -->
+        <aside class="sidebar">
+            <div class="sidebar-header">
+                <h2>Física 3º ESO</h2>
+                <p>Plataforma de Estudio</p>
+            </div>
+            
+            <nav class="sidebar-menu">
+                <a href="#" class="menu-item active" onclick="switchPage('cinematica', this)">
+                    <span class="icon">📈</span>
+                    Cinemática
+                </a>
+                <a href="#" class="menu-item" onclick="switchPage('dinamica', this)">
+                    <span class="icon">⚙️</span>
+                    Dinámica
+                </a>
+                <a href="#" class="menu-item" onclick="switchPage('energia', this)">
+                    <span class="icon">⚡</span>
+                    Energía
+                </a>
+            </nav>
+        </aside>
+
+        <!-- CONTENIDO PRINCIPAL -->
+        <main class="main-content">
+            
+            <!-- PÁGINA 1: CINEMÁTICA -->
+            <div id="page-cinematica" class="page-content">
+                <header class="content-header">
+                    <p class="subtitle">FÍSICA SUPERIOR - 3º ESO</p>
+                    <h1>Cinemática Ampliada</h1>
+                    <p style="margin-top: 8px; color: var(--text-secondary);">Estudio riguroso del movimiento y sus variables a través de casos de uso y gráficas paramétricas.</p>
+                </header>
+
+            <!-- SECCIÓN: MRU -->
+            <h2 class="section-title">Movimiento Rectilíneo Uniforme (MRU)</h2>
+            <div class="cards-grid mb-10">
+                
+                <article class="card card-theory">
+                    <div class="card-header">
+                        <span class="badge">CONCEPTO: V = CONSTANTE</span>
+                        <span class="icon-right">📚</span>
+                    </div>
+                    <h3>Características del MRU</h3>
+                    <p>En el MRU, la velocidad de la partícula es constante en magnitud y dirección, lo que implica que la <strong>aceleración es estrictamente cero (a = 0)</strong>. Partículas libres de fuerzas resultantes (1ª Ley de Newton) ejecutan MRU.</p>
+                </article>
+
+                <article class="card card-formula card-formula-main">
+                    <div class="card-header">
+                        <span class="badge badge-dark">ECUACIÓN HORARIA (MRU)</span>
+                    </div>
+                    <div class="formula-display">
+                        <span class="math-eq">$$x(t) = x_0 + v \cdot (t - t_0)$$</span>
+                    </div>
+                    <p class="formula-desc">Posición en función del tiempo para velocidad fija.</p>
+                </article>
+
+                <!-- Gráficas MRU -->
+                <article class="card card-graph">
+                    <div class="card-header">
+                        <span class="badge badge-graph">ANÁLISIS GRÁFICO (MRU)</span>
+                        <span class="icon-right">📊</span>
+                    </div>
+                    <div class="graphs-container">
+                        <div class="graph-box">
+                            <h4 class="graph-title">Posición (s-t)</h4>
+                            <div class="graph-placeholder st-graph">
+                                <svg viewBox="0 0 200 100" class="graph-svg">
+                                    <!-- Ejes -->
+                                    <line x1="10" y1="10" x2="10" y2="90" stroke="#8E8E93" stroke-width="2" />
+                                    <line x1="10" y1="90" x2="190" y2="90" stroke="#8E8E93" stroke-width="2" />
+                                    <!-- Líneas -->
+                                    <line x1="10" y1="80" x2="150" y2="20" stroke="var(--accent-blue)" stroke-width="3" stroke-linecap="round"/>
+                                    <line x1="10" y1="20" x2="150" y2="80" stroke="#FF9500" stroke-width="3" stroke-linecap="round" stroke-dasharray="4 4"/>
+                                    <text x="5" y="15" fill="#8E8E93" font-size="10">x</text>
+                                    <text x="180" y="98" fill="#8E8E93" font-size="10">t</text>
+                                    <text x="160" y="25" fill="var(--accent-blue)" font-size="9" font-weight="bold">v > 0</text>
+                                    <text x="160" y="85" fill="#FF9500" font-size="9" font-weight="bold">v < 0</text>
+                                </svg>
+                                <p class="graph-caption">La pendiente de esta recta representa directamente la <strong>velocidad</strong> (constante). Si baja, es retroceso.</p>
+                            </div>
+                        </div>
+
+                        <div class="graph-box">
+                            <h4 class="graph-title">Velocidad (v-t)</h4>
+                            <div class="graph-placeholder vt-graph">
+                                <svg viewBox="0 0 200 100" class="graph-svg">
+                                    <!-- Ejes -->
+                                    <line x1="10" y1="10" x2="10" y2="90" stroke="#8E8E93" stroke-width="2" />
+                                    <line x1="10" y1="50" x2="190" y2="50" stroke="#8E8E93" stroke-width="1" stroke-dasharray="2 2" /> <!-- Eje t central -->
+                                    <!-- Líneas horizontales -->
+                                    <line x1="10" y1="20" x2="180" y2="20" stroke="var(--accent-blue)" stroke-width="3" stroke-linecap="round"/>
+                                    <line x1="10" y1="80" x2="180" y2="80" stroke="#FF9500" stroke-width="3" stroke-linecap="round"/>
+                                    <text x="5" y="15" fill="#8E8E93" font-size="10">v</text>
+                                    <text x="180" y="47" fill="#8E8E93" font-size="10">t</text>
+                                    <text x="150" y="15" fill="var(--accent-blue)" font-size="9" font-weight="bold">v > 0 (Avanza)</text>
+                                    <text x="150" y="90" fill="#FF9500" font-size="9" font-weight="bold">v < 0 (Retrocede)</text>
+                                </svg>
+                                <p class="graph-caption">La velocidad no varía. El <strong>área bajo la recta</strong> determina el espacio recorrido $\Delta x$.</p>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+            </div>
+
+
+            <!-- SECCIÓN: MRUA -->
+            <h2 class="section-title">Movimiento Rectilíneo Uniformemente Acelerado (MRUA)</h2>
+            <div class="cards-grid">
+                
+                <article class="card card-theory">
+                    <div class="card-header">
+                        <span class="badge">CONCEPTO: A = CONSTANTE</span>
+                        <span class="icon-right">🏎️</span>
+                    </div>
+                    <h3>Características del MRUA</h3>
+                    <p>La velocidad varía de forma lineal debido a una <strong>aceleración constante (a ≠ 0)</strong>. Ésta puede tener el mismo sentido que el movimiento (ganando rapidez) o sentido contrario (frenado/deceleración).</p>
+                </article>
+
+                <article class="card card-formula card-formula-main">
+                    <div class="card-header">
+                        <span class="badge badge-dark">ECUACIÓN HORARIA COMPLETA (MRUA)</span>
+                    </div>
+                    <div class="formula-display">
+                        <span class="math-eq">$$x(t) = x_0 + v_0 \cdot t + \frac{1}{2} \cdot a \cdot t^2$$</span>
+                    </div>
+                    <p class="formula-desc">Ecuación paramétrica principal de segundo grado para predecir la posición con aceleración.</p>
+                </article>
+
+                <article class="card card-formula">
+                    <div class="card-header">
+                        <span class="badge badge-dark">LEY DE VELOCIDADES & INDEPENDIENTE (MRUA)</span>
+                    </div>
+                    <div class="formula-display" style="gap:20px; display:flex; flex-direction:column; padding-bottom:0;">
+                        <span class="math-eq" style="font-size:1.5rem">$$v(t) = v_0 + a \cdot t$$</span>
+                        <span class="math-eq" style="font-size:1.5rem">$$v^2 = v_0^2 + 2 \cdot a \cdot \Delta x$$</span>
+                    </div>
+                    <p class="formula-desc" style="margin-top:20px">La fórmula independiente del tiempo es crucial para resolver sistemas rápidos.</p>
+                </article>
+
+                <!-- Gráficas MRUA -->
+                <article class="card card-graph" style="grid-column: span 3;">
+                    <div class="card-header">
+                        <span class="badge badge-graph">ANÁLISIS GRÁFICO TRIPLE (MRUA)</span>
+                        <span class="icon-right">📈</span>
+                    </div>
+                    <div class="graphs-container">
+                        
+                        <div class="graph-box">
+                            <h4 class="graph-title">Posición (s-t)</h4>
+                            <div class="graph-placeholder st-graph">
+                                <svg viewBox="0 0 200 100" class="graph-svg">
+                                    <line x1="10" y1="10" x2="10" y2="90" stroke="#8E8E93" stroke-width="2" />
+                                    <line x1="10" y1="90" x2="190" y2="90" stroke="#8E8E93" stroke-width="2" />
+                                    <!-- Parábola cóncava arriba (a>0) -->
+                                    <path d="M 10 90 Q 100 90, 190 10" fill="none" stroke="var(--accent-blue)" stroke-width="3" stroke-linecap="round"/>
+                                    <!-- Parábola convexa (frenado a<0) -->
+                                    <path d="M 10 90 Q 60 20, 190 20" fill="none" stroke="#FF9500" stroke-width="3" stroke-linecap="round" stroke-dasharray="4 4"/>
+                                    <text x="5" y="15" fill="#8E8E93" font-size="10">x</text>
+                                    <text x="180" y="98" fill="#8E8E93" font-size="10">t</text>
+                                    <text x="150" y="30" fill="var(--accent-blue)" font-size="9" font-weight="bold">a > 0</text>
+                                    <text x="150" y="15" fill="#FF9500" font-size="9" font-weight="bold">a < 0</text>
+                                </svg>
+                                <p class="graph-caption">Es matemáticamente una <strong>parábola</strong> debido al factor $t^2$. Si frena ($a<0$), la pendiente disminuye hasta 0.</p>
+                            </div>
+                        </div>
+
+                        <div class="graph-box">
+                            <h4 class="graph-title">Velocidad (v-t)</h4>
+                            <div class="graph-placeholder vt-graph">
+                                <svg viewBox="0 0 200 100" class="graph-svg">
+                                    <line x1="10" y1="10" x2="10" y2="90" stroke="#8E8E93" stroke-width="2" />
+                                    <line x1="10" y1="90" x2="190" y2="90" stroke="#8E8E93" stroke-width="2" />
+                                    <!-- Acelera v0=0 a>0 -->
+                                    <line x1="10" y1="90" x2="150" y2="20" stroke="var(--accent-blue)" stroke-width="3" stroke-linecap="round"/>
+                                    <!-- Frena v0>0 a<0 -->
+                                    <line x1="10" y1="40" x2="150" y2="90" stroke="#FF9500" stroke-width="3" stroke-linecap="round" stroke-dasharray="4 4"/>
+                                    <text x="5" y="15" fill="#8E8E93" font-size="10">v</text>
+                                    <text x="180" y="98" fill="#8E8E93" font-size="10">t</text>
+                                </svg>
+                                <p class="graph-caption">Línea recta con pendiente $\neq 0$. Su pendiente es la <strong>aceleración</strong>. Sigue aplicándose que el área bajo ella es $\Delta x$.</p>
+                            </div>
+                        </div>
+
+                        <div class="graph-box">
+                            <h4 class="graph-title">Aceleración (a-t)</h4>
+                            <div class="graph-placeholder at-graph">
+                                <svg viewBox="0 0 200 100" class="graph-svg">
+                                    <line x1="10" y1="10" x2="10" y2="90" stroke="#8E8E93" stroke-width="2" />
+                                    <line x1="10" y1="50" x2="190" y2="50" stroke="#8E8E93" stroke-width="1" stroke-dasharray="2 2" />
+                                    <!-- a > 0 -->
+                                    <line x1="10" y1="20" x2="150" y2="20" stroke="var(--accent-blue)" stroke-width="3" stroke-linecap="round"/>
+                                    <!-- a < 0 -->
+                                    <line x1="10" y1="80" x2="150" y2="80" stroke="#FF9500" stroke-width="3" stroke-linecap="round"/>
+                                    <text x="5" y="15" fill="#8E8E93" font-size="10">a</text>
+                                    <text x="180" y="47" fill="#8E8E93" font-size="10">t</text>
+                                    <text x="160" y="23" fill="var(--accent-blue)" font-size="9" font-weight="bold">a > 0</text>
+                                    <text x="160" y="83" fill="#FF9500" font-size="9" font-weight="bold">a < 0</text>
+                                </svg>
+                                <p class="graph-caption">En 3º de la ESO estudiamos sólo aceleraciones constantes, formando líneas horizontales ($+$ o $-$).</p>
+                            </div>
+                        </div>
+                        
+                    </div>
+                </article>
+
+                <article class="card card-exercise" style="grid-column: span 3;">
+                    <div class="card-header">
+                        <span class="badge badge-light">EJERCICIO DE SÍNTESIS: FRENADO DE EMERGENCIA</span>
+                        <span class="icon-right">📝</span>
+                    </div>
+                    <p class="exercise-text">"Un Audi R8 corre a 120 km/h cuando un obstáculo aparece a 60 metros. Si el conductor pisa a fondo logrando una deceleración extrema constante de -9 m/s²... ¿Chocará o logrará detenerse a tiempo matemáticamente?"</p>
+                    
+                    <button class="btn btn-primary" onclick="toggleSolution('solution-1')" style="max-width:300px">Ejecutar Análisis</button>
+
+                    <div class="solution-box hidden" id="solution-1" style="margin-top:20px;">
+                        <p><strong>1) Traducción al S.I.:</strong> $v_0 = 120 \text{ km/h} \div 3.6 = 33.33 \text{ m/s}$. El objetivo es llegar a $v = 0 \text{ m/s}$.</p>
+                        <p><strong>2) Usando la Ley Independiente del tiempo:</strong> Esta fórmula nos ahorra calcular el tiempo de frenado:<br>
+                           $v^2 = v_0^2 + 2\cdot a \cdot \Delta x$</p>
+                        <p><strong>3) Despejamos $\Delta x$ (distancia de frenada):</strong><br>
+                           $0 = (33.33)^2 + 2 \cdot (-9) \cdot \Delta x$<br>
+                           $0 = 1110.89 - 18 \cdot \Delta x$<br>
+                           $18 \cdot \Delta x = 1110.89$<br>
+                           $\Delta x = 61.71 \text{ metros.}$</p>
+                        <p class="final-result" style="color: #FF3B30">CHOCARÁ. El obstáculo está a 60 metros y matemáticamente necesita 61.71 metros para detenerse.</p>
+                    </div>
+                </article>
+
+            </div>
+
+            <!-- SECCIÓN: CASOS DE ESTUDIO AVANZADOS -->
+            <h2 class="section-title" style="margin-top:60px; color: #5E5CE6;">Casos Prácticos de Nivel Avanzado (Física Académica)</h2>
+            <div class="cards-grid">
+                
+                <!-- CASO 1: ENCUENTROS -->
+                <article class="card card-exercise" style="grid-column: span 3; border-left: 4px solid #AF52DE;">
+                    <div class="card-header">
+                        <span class="badge badge-light" style="color: #AF52DE;">PROBLEMA DE ENCUENTROS (TIPO EXAMEN)</span>
+                        <span class="icon-right">🚂 💥 🚂</span>
+                    </div>
+                    <p class="exercise-text">"Dos estaciones, A y B, están separadas por 500 km. De la estación A sale un tren hacia B a una velocidad constante de 100 km/h (MRU). Al mismo instante, de B sale otro tren hacia A a 150 km/h (MRU).<br><br><strong>a)</strong> ¿Cuánto tiempo tardan en cruzarse?<br><strong>b)</strong> ¿A qué distancia de la estación A ocurre el encuentro?"</p>
+                    
+                    <button class="btn btn-primary" onclick="toggleSolution('solution-encuentro')" style="background-color: #AF52DE;">Desplegar Resolución Topológica</button>
+
+                    <div class="solution-box hidden" id="solution-encuentro" style="margin-top:20px;">
+                        <p><strong>1) Establecer el Sistema de Referencia (S.R.):</strong><br>
+                        Fijamos el origen (x=0) en la estación A. Por tanto, el tren A parte de $x_{A0} = 0 \text{ km}$ viajando hacia la derecha ($v_A = +100 \text{ km/h}$).<br>
+                        El tren B parte de la estación B, a la derecha del origen, por lo que su posición inicial es $x_{B0} = 500 \text{ km}$. Como va hacia A (hacia la izquierda), su velocidad es negativa: $v_B = -150 \text{ km/h}$.</p>
+                        
+                        <p><strong>2) Escribir las ecuaciones horarias (MRU):</strong><br>
+                           Tren A: $x_A(t) = 0 + 100t = 100t$<br>
+                           Tren B: $x_B(t) = 500 - 150t$</p>
+                           
+                        <p><strong>3) Condición de Encuentro Matemático:</strong><br>
+                           Ambos trenes coinciden geométricamente cuando sus posiciones son exactamente iguales: $x_A(t) = x_B(t)$<br>
+                           $100t = 500 - 150t$<br>
+                           $250t = 500$<br>
+                           $t = 500 / 250 = 2 \text{ horas.}$</p>
+
+                        <p><strong>4) Sustituir el tiempo en cualquiera de las ecuaciones para la distancia:</strong><br>
+                           En la ecuación A: $x_A(2) = 100 \cdot 2 = 200 \text{ km.}$</p>
+
+                        <p class="final-result" style="color: #AF52DE;">RESULTADO: Se cruzan a las 2 horas exactas, en un punto situado a 200 km de la estación A (y por tanto a 300 km de la estación B).</p>
+                    </div>
+                </article>
+
+                <!-- CASO 2: TIRO VERTICAL Y CAÍDA LIBRE -->
+                <article class="card card-exercise" style="grid-column: span 3; border-left: 4px solid #FF9500;">
+                    <div class="card-header">
+                        <span class="badge badge-light" style="color: #FF9500;">CAÍDA LIBRE Y LANZAMIENTO VERTICAL (VECTORIAL)</span>
+                        <span class="icon-right">🚀 🌍</span>
+                    </div>
+                    <p class="exercise-text">"Desde el balcón de un edificio a 45 metros de altura se lanza verticalmente hacia arriba una pelota con una velocidad inicial de 20 m/s. Considerando $\text{g} = -9.8 \text{ m/s}^2$ y depreciando la fricción del aire.<br><br><strong>a)</strong> Calcula la altura máxima que alcanza desde el suelo.<br><strong>b)</strong> ¿A qué velocidad impactará contra el suelo de la calle?"</p>
+                    
+                    <button class="btn btn-primary" onclick="toggleSolution('solution-caida')" style="background-color: #FF9500;">Desplegar Resolución Vectorial (eje Y)</button>
+
+                    <div class="solution-box hidden" id="solution-caida" style="margin-top:20px;">
+                        <p><strong>Variables Vectoriales (Eje Y ↑+):</strong><br>
+                        Posición inicial ($y_0$) = 45 m. <i>(El origen y=0 está en el suelo).</i><br>
+                        Velocidad inicial ($v_0$) = +20 m/s. <i>(Hacia arriba es positivo).</i><br>
+                        Aceleración (gravedad) = -9.8 m/s². <i>(Siempre apunta hacia el suelo, tira hacia abajo).</i><br>
+                        Ecuación horaria: $y(t) = 45 + 20t - 4.9t^2$</p>
+                        
+                        <p><strong>a) Altura Máxima ($h_{max}$):</strong><br>
+                           En la altura máxima, <strong>el objeto se detiene</strong> instantáneamente tras subir y empezar a bajar. Luego, $v = 0 \text{ m/s}$.<br>
+                           Ecuación de vel: $v = v_0 + (-9.8)t \Rightarrow 0 = 20 - 9.8t \Rightarrow t = 20/9.8 \approx 2.04 \text{ s}$.<br>
+                           Sustituimos el tiempo de subida en la ecuación horaria:<br>
+                           $y(2.04) = 45 + 20(2.04) - 4.9(2.04)^2 = 45 + 40.8 - 20.39 = 65.41 \text{ m.}$</p>
+                           
+                        <p><strong>b) Velocidad de Impacto:</strong><br>
+                           El impacto ocurre cuando el objeto llega al suelo ($y = 0$).<br>
+                           $0 = 45 + 20t - 4.9t^2$. Es una ecuación de segundo grado. Sus resoluciones son $t \approx 5.76 \text{ s}$ y $t \approx -1.58 \text{ s}$ (descartamos tiempo negativo).<br>
+                           Sustituimos el tiempo de vuelo (5.76 s) en la ecuación de velocidad:<br>
+                           $v(5.76) = 20 - 9.8(5.76) = 20 - 56.44 = -36.44 \text{ m/s}.$</p>
+
+                        <p class="final-result" style="color: #FF9500;">RESULTADO: Sube hasta los 65.41 m de altura. Impacta el suelo con una velocidad de <strong>36.44 m/s dirigida hacia abajo (de ahí el signo negativo de restitución vectorial).</strong></p>
+                    </div>
+                </article>
+
+            </div>
+            
+            </div> <!-- CIERRE PAGE CINEMÁTICA -->
+
+            <!-- PÁGINA 2: DINÁMICA -->
+            <div id="page-dinamica" class="page-content hidden">
+                <header class="content-header">
+                    <p class="subtitle">FÍSICA SUPERIOR - 3º ESO</p>
+                    <h1>Dinámica y Fuerzas</h1>
+                    <p style="margin-top: 8px; color: var(--text-secondary);">Análisis estático y cinético de los cuerpos gobernado por los Principios Fundamentales y la Ley de Newton.</p>
+                </header>
+
+                <h2 class="section-title">Las Leyes de Newton (Mecánica Clásica)</h2>
+                <div class="cards-grid mb-10">
+                    
+                    <article class="card card-theory">
+                        <div class="card-header">
+                            <span class="badge">1ª LEY: INERCIA</span>
+                            <span class="icon-right">⚖️</span>
+                        </div>
+                        <h3>Principio de Inercia</h3>
+                        <p>Todo cuerpo permanece en estado de reposo absoluto o de Movimiento Rectilíneo Uniforme (MRU, $a=0$) a menos que una **fuerza neta externa** actúe sobre él ($\Sigma \vec{F} = 0$).</p>
+                    </article>
+
+                    <article class="card card-formula card-formula-main">
+                        <div class="card-header">
+                            <span class="badge badge-dark">2ª LEY: ECUACIÓN FUNDAMENTAL</span>
+                        </div>
+                        <div class="formula-display">
+                            <span class="math-eq">$$\Sigma \vec{F} = m \cdot \vec{a}$$</span>
+                        </div>
+                        <p class="formula-desc">La fuerza resultante es proporcional a la masa del cuerpo por la aceleración. Unidad S.I. (Newton, N)</p>
+                    </article>
+
+                    <article class="card card-theory">
+                        <div class="card-header">
+                            <span class="badge">3ª LEY: ACCIÓN-REACCIÓN</span>
+                            <span class="icon-right">🪃</span>
+                        </div>
+                        <h3>Ley de Acción y Reacción</h3>
+                        <p>Si un cuerpo A ejerce una fuerza sobre un cuerpo B (acción), B ejerce sobre A una fuerza de igual magnitud y dirección, pero de **sentido opuesto** (reacción). $F_{AB} = -F_{BA}$. ¡Ojo! Las fuerzas no se anulan puesto que se aplican sobre cuerpos distintos.</p>
+                    </article>
+                </div>
+
+                <h2 class="section-title">Tipos de Fuerzas Frecuentes</h2>
+                <div class="cards-grid mb-10">
+                    
+                    <article class="card card-formula" style="background:#000;">
+                        <div class="card-header">
+                            <span class="badge badge-dark">EL PESO ($\vec{P}$ o $\vec{W}$)</span>
+                        </div>
+                        <div class="formula-display">
+                            <span class="math-eq">$$P = m \cdot g$$</span>
+                        </div>
+                        <p class="formula-desc">Atracción gravitatoria. Siempre es vertical y apunta al centro de la Tierra.</p>
+                    </article>
+
+                    <article class="card card-formula" style="background:#333;">
+                        <div class="card-header">
+                            <span class="badge badge-dark">LEY DE HOOKE (Mueles elásticos)</span>
+                        </div>
+                        <div class="formula-display">
+                            <span class="math-eq">$$F_e = -k \cdot \Delta x$$</span>
+                        </div>
+                        <p class="formula-desc">La fuerza elástica se opone a la deformación ($k$ es la constante en N/m).</p>
+                    </article>
+
+                    <article class="card card-formula" style="background:#555;">
+                        <div class="card-header">
+                            <span class="badge badge-dark">FUERZA DE ROZAMIENTO ($F_r$)</span>
+                        </div>
+                        <div class="formula-display">
+                            <span class="math-eq">$$F_r = \mu \cdot N$$</span>
+                        </div>
+                        <p class="formula-desc">Fricción entre las superficies en contacto. $\mu$ es el coeficiente adimensional y N la Normal.</p>
+                    </article>
+
+                </div>
+
+                <!-- CASOS PRÁCTICOS DINÁMICA -->
+                <h2 class="section-title" style="margin-top:60px; color: #5E5CE6;">Análisis de Fuerzas de Nivel Avanzado (Diagrama de Cuerpo Libre)</h2>
+                <div class="cards-grid">
+                    
+                    <article class="card card-exercise" style="grid-column: span 3; border-left: 4px solid #AF52DE;">
+                        <div class="card-header">
+                            <span class="badge badge-light" style="color: #AF52DE;">DINÁMICA DE BLOQUES (FUERZAS ÚTILES)</span>
+                            <span class="icon-right">📦 ➡️</span>
+                        </div>
+                        <p class="exercise-text">"Un bloque de madera de $m = 5 \text{ kg}$ descansa sobre una mesa horizontal, cuyo coeficiente de rozamiento cinético con el bloque es $\mu = 0.3$. Para moverlo, tiramos mediante una cuerda con una fuerza horizontal de $30 \text{ N}$. ($g=9.8 \text{ m/s}^2$).<br><br><strong>a)</strong> Realiza el sumatorio de fuerzas y calcula la aceleración del bloque.<br><strong>b)</strong> ¿Qué pasaría con la aceleración si la fuerza tirase hacia arriba formando un ángulo con la horizontal?"</p>
+                        
+                        <button class="btn btn-primary" onclick="toggleSolution('solution-din-1')" style="background-color: #AF52DE;">Desplegar Resolución</button>
+
+                        <div class="solution-box hidden" id="solution-din-1" style="margin-top:20px;">
+                            <p><strong>1) Eje Y (Equilibrio vertical $\Sigma F_Y = 0$):</strong><br>
+                            El bloque no vuela ni se hunde, así que la Normal $N$ compensa al peso $P$.<br>
+                            $N - P = 0 \Rightarrow N = P = m \cdot g = 5 \cdot 9.8 = 49 \text{ Newtons.}$</p>
+                            
+                            <p><strong>2) Eje X (Movimiento acelerado $\Sigma F_X = m \cdot a$):</strong><br>
+                            A la derecha tira la fuerza $F=30\text{ N}$ y se opone el rozamiento $F_r$.<br>
+                            Calculamos el rozamiento: $F_r = \mu \cdot N = 0.3 \cdot 49 = 14.7 \text{ N}$<br>
+                            Ecuación fundamental de Newton: $F - F_r = m \cdot a$<br>
+                            $30 - 14.7 = 5 \cdot a \Rightarrow 15.3 = 5a \Rightarrow a = \frac{15.3}{5} = \mathbf{3.06 \text{ m/s}^2}$</p>
+
+                            <p><strong>b) Si se tira con un ángulo (Tensión oblicua):</strong><br>
+                            La fuerza $F$ tendría dos componentes ($F_x$ y $F_y$). La componente vertical $F_y$ "ayudaría" a empujar el objeto hacia arribar, <strong>reduciendo el apoyo contra el suelo de la Normal</strong> ($N = P - F_y$). Al ser menor la Normal, <strong>el rozamiento $F_r$ disminuiría</strong>. Aunque perderíamos fuerza útil horizontal ($F_x < F$), si el rozamiento baja mucho, la aceleración global del sistema podría ser superior.</p>
+                        </div>
+                    </article>
+
+                    <article class="card card-exercise" style="grid-column: span 3; border-left: 4px solid #AF52DE;">
+                        <div class="card-header">
+                            <span class="badge badge-light" style="color: #AF52DE;">DINÁMICA DE SISTEMAS (MÁQUINA DE ATWOOD)</span>
+                            <span class="icon-right">⚖️ ⚙️</span>
+                        </div>
+                        <p class="exercise-text">"De una polea ideal (sin rozamiento ni masa) cuelgan dos cuerpos, uno de $m_1 = 3 \text{ kg}$ y otro de $m_2 = 5 \text{ kg}$, unidos por una cuerda inextensible. Considerando $g = 9.8 \text{ m/s}^2$:<br><br><strong>a)</strong> Calcula la aceleración del sistema al soltar libremente las masas.<br><strong>b)</strong> ¿Cuál es la tensión ($T$) soportada por la cuerda durante la caída?"</p>
+                        
+                        <button class="btn btn-primary" onclick="toggleSolution('solution-din-2')" style="background-color: #AF52DE;">Desplegar Resolución Vectorial Multicuerpo</button>
+
+                        <div class="solution-box hidden" id="solution-din-2" style="margin-top:20px;">
+                            <p><strong>1) Planteamiento del Sistema (Criterios de Signos):</strong><br>
+                            Como $m_2 > m_1$, el sistema rotará por el peso del cuerpo 2. Asumiremos como "positivo" el sentido previsible del movimiento (la masa 2 baja, la masa 1 sube).<br>
+                            Ambos cuerpos comparten la misma aceleración ($a$) y están unidos por la misma cuerda (Tensión $T$).</p>
+                            
+                            <p><strong>2) Análisis del Cuerpo 1 (Sube):</strong><br>
+                            Las fuerzas sobre él son la Tensión (tira hacia arriba a favor del movimiento) y su peso $P_1$ (tira hacia abajo en contra).<br>
+                            $$\Sigma F_1 = T - P_1 = m_1 \cdot a \Rightarrow T - (3 \cdot 9.8) = 3a \Rightarrow T - 29.4 = 3a$$</p>
+
+                            <p><strong>3) Análisis del Cuerpo 2 (Baja):</strong><br>
+                            Fuerzas sobre él: su peso $P_2$ (tira hacia abajo a favor del movimiento) y la Tensión $T$ (tira hacia arriba frenando la caída).<br>
+                            $$\Sigma F_2 = P_2 - T = m_2 \cdot a \Rightarrow (5 \cdot 9.8) - T = 5a \Rightarrow 49 - T = 5a$$</p>
+
+                            <p><strong>4) Resolución del sistema de ecuaciones:</strong><br>
+                            Sumamos ambas ecuaciones para anular la tensión de manera directa:<br>
+                            $T - 29.4 + 49 - T = 3a + 5a$<br>
+                            $19.6 = 8a \Rightarrow a = \frac{19.6}{8} = \mathbf{2.45 \text{ m/s}^2}$</p>
+
+                            <p><strong>b) Tensión de la cuerda:</strong><br>
+                            Sustituimos la $a$ calculada en la ecuación del cuerpo 1:<br>
+                            $T = 3(2.45) + 29.4 = 7.35 + 29.4 = \mathbf{36.75 \text{ Newtons.}}$</p>
+                        </div>
+                    </article>
+
+                    <article class="card card-exercise" style="grid-column: span 3; border-left: 4px solid #FF9500;">
+                        <div class="card-header">
+                            <span class="badge badge-light" style="color: #FF9500;">SISTEMA HORIZONTAL + COLGANTE (CON ROZAMIENTO)</span>
+                            <span class="icon-right">📦 〰️ 🪨</span>
+                        </div>
+                        <p class="exercise-text">"Un bloque $A$ de $4 \text{ kg}$ descansa sobre una mesa horizontal, ligado por una cuerda inextensible y una polea en el borde de la mesa a un bloque $B$ colgante de $6 \text{ kg}$. El coeficiente de fricción cinético entre el bloque $A$ y la mesa es $\mu = 0.2$.<br><br><strong>a)</strong> Halla la aceleración del sistema completo.<br><strong>b)</strong> ¿Es posible que el sistema se quede quieto si cambiamos las masas?"</p>
+                        
+                        <button class="btn btn-primary" onclick="toggleSolution('solution-din-3')" style="background-color: #FF9500;">Desplegar Resolución Vectorial Multicuerpo</button>
+
+                        <div class="solution-box hidden" id="solution-din-3" style="margin-top:20px;">
+                            <p><strong>1) Análisis del Bloque B (Cuelga y tira del sistema):</strong><br>
+                            Baja impulsado por su gran peso ($P_B = 6 \cdot 9.8 = 58.8 \text{ N}$), pero la Tensión tira hacia arriba frenándolo.<br>
+                            $$\Sigma F_B = P_B - T = m_B \cdot a \Rightarrow 58.8 - T = 6a$$</p>
+                            
+                            <p><strong>2) Análisis del Bloque A (Arrastrado por la mesa):</strong><br>
+                            Primero vemos su eje Y: como no salta, su Normal soporta su peso. $N = P_A = 4 \cdot 9.8 = 39.2 \text{ N}$.<br>
+                            Calculamos la fricción que intentará evitar que avance: $F_r = \mu \cdot N = 0.2 \cdot 39.2 = 7.84 \text{ N}$.<br>
+                            En el plano de avance (eje X), la Tensión le hace avanzar, y el rozamiento le frena:<br>
+                            $$\Sigma F_A = T - F_r = m_A \cdot a \Rightarrow T - 7.84 = 4a$$</p>
+
+                            <p><strong>3) Extracción de la aceleración matemática:</strong><br>
+                            Resolvemos por suma vertical para cancelar la tensión:<br>
+                            $58.8 - T + T - 7.84 = 6a + 4a$<br>
+                            $50.96 = 10a \Rightarrow a = \mathbf{5.096 \text{ m/s}^2}$</p>
+
+                            <p><strong>4) Casuística lógica:</strong><br>
+                            Para que el sistema se mantuviese en reposo puro (equilibrio), la fuerza tractora entrante ($P_B$) tendría que ser <strong>menor o igual a la máxima fuerza de rozamiento estático</strong> que puede aportar el bloque A. En nuestro caso la tracción era abrumadora ($58.8 > 7.84$). Colgando poco peso sí podríamos atrapar al sistema, pero nunca lograríamos que este sistema rodara "hacia atrás", pues el rozamiento no genera movimiento de por sí.</p>
+                        </div>
+                    </article>
+
+                </div>
+
+            </div> <!-- CIERRE PÁGINA 2 -->
+
+            <!-- PÁGINA 3: ENERGÍA -->
+            <div id="page-energia" class="page-content hidden">
+                <header class="content-header">
+                    <p class="subtitle">FÍSICA SUPERIOR - 3º ESO</p>
+                    <h1>Trabajo y Energía Mecánica</h1>
+                    <p style="margin-top: 8px; color: var(--text-secondary);">Estudio de la capacidad de los cuerpos para obrar y el principio universal de conservación de la energía en sistemas aislados.</p>
+                </header>
+
+                <h2 class="section-title">Magnitudes Fundamentales</h2>
+                <div class="cards-grid mb-10">
+                    
+                    <article class="card card-formula card-formula-main">
+                        <div class="card-header">
+                            <span class="badge badge-dark">TRABAJO MECÁNICO ($W$)</span>
+                        </div>
+                        <div class="formula-display">
+                            <span class="math-eq">$$W = \vec{F} \cdot \Delta \vec{x} \cdot \cos(\alpha)$$</span>
+                        </div>
+                        <p class="formula-desc">Energía transferida por una fuerza al desplazar un objeto cierta distancia. Su unidad S.I. es el Julio (J).</p>
+                    </article>
+
+                    <article class="card card-theory">
+                        <div class="card-header">
+                            <span class="badge">POTENCIA ($P$)</span>
+                            <span class="icon-right">⏱️</span>
+                        </div>
+                        <h3>Rapidez de transmición</h3>
+                        <p>No basta con saber cuánta energía o trabajo requiere una tarea, sino **a qué ritmo** se realiza. $P = W / t$. Su unidad matemática en el Sistema Internacional es el Vatio (W).</p>
+                    </article>
+
+                </div>
+
+                <h2 class="section-title">Tipos de Energía Mecánica</h2>
+                <div class="cards-grid mb-10">
+                    
+                    <article class="card card-formula" style="background:#1B0A42;">
+                        <div class="card-header">
+                            <span class="badge badge-dark">ENERGÍA CINÉTICA ($E_c$)</span>
+                            <span class="icon-right">🏎️</span>
+                        </div>
+                        <div class="formula-display">
+                            <span class="math-eq">$$E_c = \frac{1}{2} m \cdot v^2$$</span>
+                        </div>
+                        <p class="formula-desc">Energía que posee un cuerpo por el hecho de **moverse**. Está asociada a la velocidad $v$ elevándola al cuadrado (no lineal).</p>
+                    </article>
+
+                    <article class="card card-formula" style="background:#4A154B;">
+                        <div class="card-header">
+                            <span class="badge badge-dark">ENERGÍA POTENCIAL ($E_p$)</span>
+                            <span class="icon-right">🏔️</span>
+                        </div>
+                        <div class="formula-display">
+                            <span class="math-eq">$$E_p = m \cdot g \cdot h$$</span>
+                        </div>
+                        <p class="formula-desc">Energía almacenada por la **posición** o altura ($h$) del cuerpo dentro del campo gravitatorio terrestre.</p>
+                    </article>
+                </div>
+
+                <!-- CASO PRÁCTICO TRABAJO -->
+                <h2 class="section-title" style="margin-top:60px; color: #5E5CE6;">Análisis del Trabajo Mecánico Total</h2>
+                <div class="cards-grid mb-10">
+                    <article class="card card-exercise" style="grid-column: span 3; border-left: 4px solid #34C759;">
+                        <div class="card-header">
+                            <span class="badge badge-light" style="color: #34C759;">DESGLOSE DE FUERZAS EN EJE HORIZONTAL</span>
+                            <span class="icon-right">📦 📏</span>
+                        </div>
+                        <p class="exercise-text">"Empujamos horizontalmente un arcón de $m = 40 \text{ kg}$ a lo largo de una distancia $\Delta x = 5 \text{ m}$ por un suelo donde el coeficiente de rozamiento dinámico es $\mu = 0.2$. La fuerza constante que aplicamos es de $150 \text{ N}$ ($g = 9.8 \text{ m/s}^2$).<br><br><strong>a)</strong> Calcula el trabajo realizado independientemente por cada una de las 4 fuerzas implicadas (Fuerza útil, Rozamiento, Peso y Normal).<br><strong>b)</strong> ¿Cuál es el Trabajo Total o Trabajo Neto realizado sobre el arcón?"</p>
+                        
+                        <button class="btn btn-primary" onclick="toggleSolution('solution-egy-trabajo')" style="background-color: #34C759;">Desplegar Análisis Vectorial de Trabajo</button>
+
+                        <div class="solution-box hidden" id="solution-egy-trabajo" style="margin-top:20px;">
+                            <p><strong>Fuerzas perpendiculares al desplazamiento ($\alpha = 90^\circ$):</strong><br>
+                            El objeto se mueve por el eje X horizontal. El Peso ($P$) tira hacia abajo y la Normal ($N$) hacia arriba.<br>
+                            Su ángulo respecto al avance es $90^\circ$ (perpendicular). Sabiendo que $\cos(90^\circ) = 0$:<br>
+                            El suelo no ayuda ni frena: $$W_N = N \cdot 5 \cdot \cos(90^\circ) = \mathbf{0 \text{ J}}$$
+                            Igualmente para la gravedad: $$W_P = (40 \cdot 9.8) \cdot 5 \cdot \cos(90^\circ) = \mathbf{0 \text{ J}}$$
+                            <em>Regla de oro: Las fuerzas perpendiculares a la trayectoria no producen trabajo.</em></p>
+                            
+                            <p><strong>Fuerza Útil o aplicada ($\alpha = 0^\circ$):</strong><br>
+                            Ambos, movimiento y empuje, van en la misma dirección apuntando a la derecha.<br>
+                            $$W_{F} = F \cdot \Delta x \cdot \cos(0^\circ) = 150 \cdot 5 \cdot 1 = \mathbf{750 \text{ J}}$$
+                            <em>(Se han transferido +750 Julios al sistema).</em></p>
+
+                            <p><strong>Fuerza de Rozamiento ($\alpha = 180^\circ$):</strong><br>
+                            Calculamos la Normal: $\Sigma F_Y = 0 \Rightarrow N = P = 40 \cdot 9.8 = 392 \text{ N}$.<br>
+                            La fricción es: $F_r = \mu \cdot N = 0.2 \cdot 392 = 78.4 \text{ N}$.<br>
+                            Esta fuerza frena al móvil (apunta en sentido contrario, de ahí el $\cos(180^\circ) = -1$):<br>
+                            $$W_{r} = F_r \cdot \Delta x \cdot \cos(180^\circ) = 78.4 \cdot 5 \cdot (-1) = \mathbf{-392 \text{ J}}$$
+                            <em>(Hemos perdido 392 Julios en forma de calor y desgaste).</em></p>
+
+                            <p><strong>b) Trabajo Total ($W_{total}$):</strong><br>
+                            Simplemente es la suma escalar de todos los trabajos individuales:<br>
+                            $$W_{total} = W_F + W_r + W_N + W_P = 750 + (-392) + 0 + 0 = \mathbf{358 \text{ J}}$$
+                            Esa ganancia neta (+358 J) es lo que hará que el arcón se acelere poco a poco ganando velocidad.</p>
+                        </div>
+                    </article>
+                </div>
+
+                <!-- PRINCIO CONSERVACIÓN Y CASOS PRÁCTICOS ENERGÍA -->
+                <h2 class="section-title" style="margin-top:60px; color: #5E5CE6;">Conservación de la Energía y Sistemas Reales</h2>
+                <div class="cards-grid">
+                    
+                    <article class="card card-theory" style="grid-column: span 3;">
+                        <div class="card-header">
+                            <span class="badge badge-primary">PRINCIPIO FUNDAMENTAL</span>
+                        </div>
+                        <h3 style="font-size: 1.4rem;">$E_{m_A} = E_{m_B}$ (Sin fricción)</h3>
+                        <p style="font-size: 1.1rem; line-height: 1.6;">La Energía Mecánica total ($E_m = E_c + E_p$) de un sistema aislado permanece **constante** si sólo actúan fuerzas conservativas (como el peso). La energía cinética se puede transformar en potencial y viceversa, pero su suma nunca desaparece. $\Delta E_m = 0$. <br><br>Si intervienen fuerzas no conservativas (como el rozamiento general), parte de esa energía se disipa en forma de calor: $\Delta E_m = W_{r}$.</p>
+                    </article>
+
+                    <article class="card card-exercise" style="grid-column: span 3; border-left: 4px solid #AF52DE;">
+                        <div class="card-header">
+                            <span class="badge badge-light" style="color: #AF52DE;">MONTANA RUSA AVANZADA (MULTICOTA $E_m$)</span>
+                            <span class="icon-right">🎢 📉</span>
+                        </div>
+                        <p class="exercise-text">"Un vagón de $m = 500 \text{ kg}$ entra en el tramo de una montaña rusa (Punto A, altura $h_A = 20 \text{ m}$) a una velocidad inicial de $v_A = 10 \text{ m/s}$. Durante todo el recorrido se asume rozamiento nulo ($\Delta E_m = 0$). Sabiendo que $g = 9.8 \text{ m/s}^2$:<br><br><strong>a)</strong> El vagón sube un montículo (Punto B) hasta una cota $h_B = 24 \text{ m}$. ¿Qué velocidad $v_B$ lleva en la cima?<br><strong>b)</strong> Tras eso cae en picado a una cueva subterránea (Punto C), cuya altura es negativa ($h_C = -5 \text{ m}$ respecto a la cota inicial 0 de la instalación). Calcula la vertiginosa velocidad $v_C$ en el abismo.<br><strong>c)</strong> De forma inesperada ataca una recta infinita empinada hacia arriba. ¿A qué altura máxima $h_D$ se frenará antes de caer hacia atrás?"</p>
+                        
+                        <button class="btn btn-primary" onclick="toggleSolution('solution-egy-1')" style="background-color: #AF52DE;">Desplegar Resolución Multicota</button>
+
+                        <div class="solution-box hidden" id="solution-egy-1" style="margin-top:20px;">
+                            <p><strong>1) Energía Mecánica Invariante:</strong><br>
+                            Lo principal es calcular el "presupuesto" energético inamovible en el Punto A. Como el vagón lleva velocidad al entrar, tiene ambas formas de energía (Cinética y Potencial).<br>
+                            $E_{m_A} = E_{c_A} + E_{p_A} = \left(\frac{1}{2} m v_A^2\right) + \left(m g h_A\right)$<br>
+                            $E_{m} = \left(\frac{1}{2} 500 \cdot 10^2\right) + \left(500 \cdot 9.8 \cdot 20\right) = 25000 + 98000 = \mathbf{123,000 \text{ J}}$</p>
+                            
+                            <p><strong>a) Velocidad en el montículo ($h_B = 24 \text{ m}$):</strong><br>
+                            Sabemos que la energía en B es idéntica: $E_{m_B} = 123000$.<br>
+                            Parte de la energía se ha invertido en ganar altura ($E_{p_B} = 500 \cdot 9.8 \cdot 24 = 117600 \text{ J}$). Al restarlo, queda muy poca energía para mantener la velocidad (cinética):<br>
+                            $$E_{c_B} = 123000 - 117600 = 5400 \text{ J}$$
+                            $$5400 = \frac{1}{2} (500) v_B^2 \Rightarrow 5400 = 250 \cdot v_B^2 \Rightarrow v_B = \sqrt{5400 / 250} = \mathbf{4.65 \text{ m/s}}$$</p>
+
+                            <p><strong>b) Descenso al abismo ($h_C = -5 \text{ m}$):</strong><br>
+                            ¡Cuidado matemático! La altura es negativa según nuestro sistema de referencia.<br>
+                            $E_{p_C} = m g h_C = 500 \cdot 9.8 \cdot (-5) = -24500 \text{ J}$.<br>
+                            Aplicando la conservación absoluta: $E_{m_A} = E_{c_C} + E_{p_C}$<br>
+                            $123000 = E_{c_C} - 24500 \Rightarrow E_{c_C} = 123000 + 24500 = 147500 \text{ J}$.<br>
+                            Toda la energía potencial perdida se ha transformado en cinética pura adicional:<br>
+                            $$147500 = \frac{1}{2} (500) v_C^2 \Rightarrow 147500 = 250 \cdot v_C^2 \Rightarrow v_C = \sqrt{147500 / 250} = \mathbf{24.29 \text{ m/s}}$$</p>
+
+                            <p><strong>c) Altura de frenado o altura máxima ($h_D$):</strong><br>
+                            Preguntar "¿dónde se frena?" significa obligar físicamente a que <strong>la velocidad final sea cero</strong> ($v_D = 0 \Rightarrow E_{c_D} = 0$).<br>
+                            Esto implica que los famosos 123,000 Julios originales se han invertido única y puramente en $E_p$ trepando metros de altura.<br>
+                            $$123000 = m \cdot g \cdot h_D \Rightarrow 123000 = 500 \cdot 9.8 \cdot h_D \Rightarrow 123000 = 4900 \cdot h_D$$
+                            $$h_D = \frac{123000}{4900} = \mathbf{25.1 \text{ metros}}$$
+                            <em>(Nota lógica: solo subió a 25.1 m porque partió originalmente de 20 m arrastrando ya algo de velocidad, de lo contrario la conservación dictaría que nunca superaría su cota original).</em></p>
+                        </div>
+                    </article>
+
+                </div>
+
+            </div> <!-- CIERRE PÁGINA 3 -->
+
+        </main>
+    </div>
+
+    <script src="js/script.js"></script>
+</body>
+</html>

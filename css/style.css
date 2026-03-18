@@ -1,0 +1,403 @@
+/* VARIABLES DE COLOR (Apple Premium Aesthetic) */
+:root {
+    /* Fondos Globales */
+    --bg-app: #F5F5F7; /* Gris claro metálico característico de macOS/iOS */
+    
+    /* Colores de las tarjetas */
+    --card-exercise: #FFFFFF; /* Blanco puro para hoja de cuaderno */
+    --card-theory: #E5E5EA; /* Gris aluminio claro */
+    --card-formula: #1C1C1E; /* Gris oscuro grafito / Espacial */
+    --card-bio: #D1D1D6; /* Gris titanio ligeramente distinto */
+    
+    /* Textos */
+    --text-primary: #1C1C1E; /* Casi negro */
+    --text-secondary: #8E8E93; /* Gris medio */
+    --text-light: #F2F2F7; /* Para texto sobre fondos oscuros */
+    
+    /* Acentos e interacciones */
+    --accent-blue: #007AFF; /* Azul funcional de Apple */
+    --accent-blue-hover: #006ADC;
+    
+    /* Otros */
+    --border-radius-lg: 24px;
+    --border-radius-md: 16px;
+    --border-radius-pill: 999px;
+    --shadow-soft: 0 4px 24px rgba(0,0,0,0.04), 0 1px 2px rgba(0,0,0,0.02);
+}
+
+/* RESET GLOBAL */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+}
+
+body {
+    background-color: var(--bg-app);
+    color: var(--text-primary);
+    -webkit-font-smoothing: antialiased;
+}
+
+/* ESTRUCTURA PRINCIPAL (APP CONTAINER) */
+.app-container {
+    display: flex;
+    min-height: 100vh;
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+/* SIDEBAR (MENÚ LATERAL) */
+.sidebar {
+    width: 260px;
+    padding: 32px 24px;
+    background-color: transparent;
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+}
+
+.sidebar-header h2 {
+    font-size: 1.2rem;
+    font-weight: 700;
+    letter-spacing: -0.5px;
+}
+
+.sidebar-header p {
+    font-size: 0.85rem;
+    color: var(--text-secondary);
+    margin-top: 4px;
+}
+
+.sidebar-menu {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.menu-item {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 12px 16px;
+    text-decoration: none;
+    color: var(--text-primary);
+    font-weight: 500;
+    border-radius: var(--border-radius-md);
+    transition: all 0.2s ease;
+}
+
+.menu-item:hover {
+    background-color: rgba(0,0,0,0.05);
+}
+
+.menu-item.active {
+    background-color: white;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+    color: var(--accent-blue);
+}
+
+.icon {
+    font-size: 1.2rem;
+}
+
+/* CONTENIDO PRINCIPAL */
+.main-content {
+    flex: 1;
+    padding: 40px;
+}
+
+.content-header {
+    margin-bottom: 32px;
+}
+
+.subtitle {
+    font-size: 0.75rem;
+    font-weight: 700;
+    color: var(--text-secondary);
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    margin-bottom: 8px;
+}
+
+.content-header h1 {
+    font-size: 2.5rem;
+    font-weight: 700;
+    letter-spacing: -1px;
+}
+
+/* TÍTULOS DE SECCIÓN (MRU / MRUA) */
+.section-title {
+    font-size: 1.6rem;
+    font-weight: 600;
+    margin: 40px 0 20px 0;
+    color: var(--text-primary);
+    border-bottom: 2px solid rgba(0,0,0,0.05);
+    padding-bottom: 8px;
+}
+
+/* GRID DE TARJETAS */
+.cards-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(360px, 1fr));
+    gap: 24px;
+}
+
+.mb-10 {
+    margin-bottom: 40px;
+}
+
+/* ESTILOS COMUNES DE TARJETAS */
+.card {
+    border-radius: var(--border-radius-lg);
+    padding: 28px;
+    box-shadow: var(--shadow-soft);
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 8px;
+}
+
+/* PÍLDORAS/ETIQUETAS (BADGES) */
+.badge {
+    padding: 6px 14px;
+    border-radius: var(--border-radius-pill);
+    font-size: 0.7rem;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+    background-color: rgba(0,0,0,0.05);
+    color: var(--text-primary);
+}
+
+.badge-dark {
+    background-color: rgba(255,255,255,0.15);
+    color: white;
+}
+
+.badge-light {
+    background-color: var(--bg-app);
+}
+
+/* CARD: TEORÍA */
+.card-theory {
+    background-color: var(--card-theory);
+    grid-column: span 2; /* Ocupa más ancho si es posible */
+}
+
+.card-theory h3 {
+    font-size: 1.3rem;
+    margin-bottom: 4px;
+}
+
+.card-theory p {
+    font-size: 0.95rem;
+    line-height: 1.5;
+    color: var(--text-primary);
+    opacity: 0.9;
+}
+
+/* CARD: FÓRMULA */
+.card-formula {
+    background-color: var(--card-formula);
+    color: white;
+    display: flex;
+    justify-content: center;
+}
+
+.formula-display {
+    padding: 20px 0;
+    text-align: center;
+}
+
+.math-eq {
+    font-size: 2rem;
+    font-weight: 400;
+    font-family: monospace, SFMono-Regular;
+    letter-spacing: 2px;
+}
+
+.formula-desc {
+    color: rgba(255,255,255,0.6);
+    font-size: 0.8rem;
+    text-align: center;
+}
+
+/* CARD: FÓRMULA PRINCIPAL (Destacada) */
+.card-formula-main {
+    background: linear-gradient(135deg, #1C1C1E 0%, #2C2C2E 100%);
+    box-shadow: 0 8px 32px rgba(0,0,0,0.1);
+    border: 1px solid rgba(255,255,255,0.1);
+}
+
+.card-formula-main .math-eq {
+    font-weight: 600;
+    color: #FFF;
+    text-shadow: 0 2px 10px rgba(255,255,255,0.2);
+}
+
+/* CARD: GRÁFICAS */
+.card-graph {
+    background-color: var(--card-theory);
+    grid-column: span 2;
+}
+
+.badge-graph {
+    background-color: rgba(0,122,255,0.1);
+    color: var(--accent-blue);
+}
+
+.graphs-container {
+    display: flex;
+    gap: 20px;
+    margin-top: 10px;
+}
+
+.graph-box {
+    flex: 1;
+    background-color: rgba(255,255,255,0.6);
+    border-radius: var(--border-radius-md);
+    padding: 16px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.graph-title {
+    font-size: 0.95rem;
+    color: var(--text-primary);
+    text-align: center;
+}
+
+.graph-placeholder {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+}
+
+.graph-svg {
+    width: 100%;
+    max-width: 250px;
+    height: auto;
+    background-color: white;
+    border-radius: 8px;
+    padding: 10px;
+    box-shadow: inset 0 2px 4px rgba(0,0,0,0.02);
+}
+
+.graph-caption {
+    font-size: 0.8rem;
+    color: var(--text-secondary);
+    text-align: center;
+    line-height: 1.4;
+}
+
+/* CARD: EJERCICIO PRÁCTICO */
+.card-exercise {
+    background-color: var(--card-exercise);
+    border: 1px solid rgba(0,0,0,0.05);
+    grid-column: span 2;
+}
+
+.exercise-text {
+    font-size: 1.05rem;
+    line-height: 1.5;
+    font-style: italic;
+    color: #333;
+    padding: 12px 0 20px 0;
+    border-bottom: 1px dashed rgba(0,0,0,0.1);
+}
+
+.solution-box {
+    background-color: var(--bg-app);
+    border-radius: var(--border-radius-md);
+    padding: 20px;
+    margin-top: 8px;
+    font-size: 0.9rem;
+    color: var(--text-primary);
+}
+
+.solution-box p {
+    margin-bottom: 8px;
+}
+
+.final-result {
+    font-weight: 700;
+    color: var(--accent-blue);
+    margin-top: 12px;
+    font-size: 1rem;
+}
+
+.hidden {
+    display: none;
+}
+
+/* CARD: CIENTÍFICO */
+.card-bio {
+    background-color: var(--card-bio);
+}
+
+.bio-intro h3 {
+    margin-bottom: 8px;
+}
+.bio-intro p {
+    font-size: 0.9rem;
+    line-height: 1.4;
+    opacity: 0.85;
+}
+
+/* BOTONES */
+.btn {
+    appearance: none;
+    border: none;
+    padding: 14px 24px;
+    border-radius: var(--border-radius-pill);
+    font-size: 0.95rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    margin-top: auto; /* Empuja el botón al fondo de la tarjeta si hay espacio */
+}
+
+.btn-primary {
+    background-color: var(--accent-blue);
+    color: white;
+}
+
+.btn-primary:hover {
+    background-color: var(--accent-blue-hover);
+}
+
+/* RESPONSIVE DESIGN (Para móviles) */
+@media (max-width: 900px) {
+    .app-container {
+        flex-direction: column;
+    }
+    
+    .sidebar {
+        width: 100%;
+        padding: 20px;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+    }
+    
+    .sidebar-menu {
+        flex-direction: row;
+    }
+    
+    .main-content {
+        padding: 20px;
+    }
+    
+    .card-theory, .card-exercise {
+        grid-column: span 1; /* Las tarjetas ocupan todo el ancho en móvil */
+    }
+}
