@@ -216,7 +216,6 @@ body {
     display: flex;
     justify-content: center;
     grid-column: span 3;
-    overflow: hidden;
 }
 
 .formula-display {
@@ -231,16 +230,16 @@ body {
     font-family: monospace, SFMono-Regular;
     letter-spacing: 0.5px;
     display: block;
-    word-break: break-word;
 }
 
-/* Forzar a MathJax a adaptarse al ancho disponible */
-.MathJax {
-    font-size: 1em !important;
-}
+/* MathJax: visible y adaptado */
 mjx-container {
+    display: inline-block !important;
     max-width: 100% !important;
-    overflow: hidden !important;
+    overflow: visible !important;
+}
+mjx-container[jax="CHTML"][display="true"] {
+    margin: 0.5em 0 !important;
 }
 
 .formula-desc {
