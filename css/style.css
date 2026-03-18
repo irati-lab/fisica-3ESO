@@ -194,7 +194,7 @@ body {
 /* CARD: TEORÍA */
 .card-theory {
     background: linear-gradient(145deg, #e2e8f0 0%, #cbd5e1 100%); border: 1px solid rgba(255,255,255,0.4);
-    grid-column: span 2; /* Ocupa más ancho si es posible */
+    grid-column: span 3;
 }
 
 .card-theory h3 {
@@ -215,7 +215,6 @@ body {
     color: white;
     display: flex;
     justify-content: center;
-    grid-column: span 3;
 }
 
 .formula-display {
@@ -253,7 +252,7 @@ mjx-container[jax="CHTML"][display="true"] {
     background: linear-gradient(135deg, #1C1C1E 0%, #2C2C2E 100%);
     box-shadow: 0 8px 32px rgba(0,0,0,0.1);
     border: 1px solid rgba(255,255,255,0.1);
-    grid-column: span 3;
+    grid-column: span 2;
 }
 
 .card-formula-main .math-eq {
